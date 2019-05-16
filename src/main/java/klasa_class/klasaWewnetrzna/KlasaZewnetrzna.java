@@ -16,7 +16,7 @@ public class KlasaZewnetrzna {
         // tak
         KlasaZewnetrzna.KlasaWewnetrzna instancja1 = klasaZewnetrzna.instancja();
         // lub tak
-        KlasaZewnetrzna.KlasaWewnetrzna instancja2 = klasaZewnetrzna.new InnerClass();
+        KlasaZewnetrzna.KlasaWewnetrzna instancja2 = klasaZewnetrzna.new KlasaWewnetrzna();
     }
 
 
