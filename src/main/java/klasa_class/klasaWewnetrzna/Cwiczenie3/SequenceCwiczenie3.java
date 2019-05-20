@@ -1,47 +1,32 @@
 package klasa_class.klasaWewnetrzna.Cwiczenie3;
 
-interface Selector {
-    boolean end();
-    Object current();
-    void next();
-}
+// to Klasa Outer
+ class Outher {
+     private String tekst;
 
- class Sequence3 {
-    private String tajnyTekst;
-    private Object [] items;
-    private int next = 0;
-    public Sequence3(int size) {
-        tajnyTekst = "hokus pokus";
-        items = new Object[size];
-    }
-    public void add(Object x) {
-        if (next < items.length)
-        {items[next++] = x;}
+     Outher (){
+         tekst = " tajny tekst";
+     }
+
+    public Outher(String tekst) {
+        this.tekst = tekst;
     }
 
-    private class SequenceSelector implements Selector {
-        private int i = 0;
-        public boolean end() { return i == items.length; }
-        public Object current() { return items[i]; }
-        public void next() { if (i < items.length) {i++; }}
-        public String wyswietlTekst(){ return tajnyTekst; }
+    class Inner{
+
+         public String toStringPole(){
+             return tekst;
+         }
+
     }
 
-    public Selector selector() {
-        return new SequenceSelector();
+    public Inner returnInner (){
+        return new Inner();
     }
 
-    public static void main(String[] args) {
-        Sequence3 sequence = new Sequence3(10);
-        for (int i = 0; i < 10; i++)
-            sequence.add(Integer.toString(i));
-        Selector selector = sequence.selector();
-        while (!selector.end()) {
-            System.out.println(selector.current() + " ");
-            selector.next();
-
-        }
-        //jeszcze nie dziala mi cwiczenie3
-        System.out.printl(selector.wyswietlTekst());
+    public static void main (String [] args){
+        Outher outerClass = new Outher();
+        Outher.Inner c = outerClass.returnInner();
+        System.out.println(c.toStringPole());
     }
 }
