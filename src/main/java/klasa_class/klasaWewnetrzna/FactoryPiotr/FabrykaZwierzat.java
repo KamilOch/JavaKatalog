@@ -15,7 +15,7 @@ static Zwierze stworzPsa (){
         return new Pies.PiesUkryty();
     }
 
- Zwierze stworzKota (){
+ static Zwierze stworzKota(){
        return new Zwierze() {
            @Override
            public void dajGlos() {
