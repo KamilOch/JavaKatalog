@@ -23,7 +23,7 @@ public class ArrayListFunkcje {
 
         //Uwaga moja listaArray!!!
 
-        MojaArrayList <Obiekt> mojaArrayListObiekty = new MojaArrayList<>();
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
 
         mojaArrayListObiekty.add(o1);
         mojaArrayListObiekty.add(o2);
@@ -31,6 +31,7 @@ public class ArrayListFunkcje {
 
         System.out.println(mojaArrayListObiekty.size());
         System.out.println(mojaArrayListObiekty.get(1));
+        System.out.println(mojaArrayListObiekty.isEmpty());
 
     }
 }
