@@ -110,7 +110,7 @@ public class MojaArrayList implements List<Object>{
 
     @Override
         public Object get(int index) {
-            return null;
+            return mojeObiekty[index];
     }
 
     @Override

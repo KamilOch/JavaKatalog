@@ -1,4 +1,3 @@
-package java;
 
 import Clollections.MojaArrayList;
 import Clollections.Obiekt;
@@ -173,5 +172,22 @@ public class ArrayListTestFunkcji {
         Assert.assertTrue(mojaArrayListObiekty.isEmpty());
     }
 
+    @Test
+    public void shouldGiveObjectFromMyList(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        Obiekt o3 = new Obiekt("obiekt3");
+        Obiekt o4 = new Obiekt("obiekt4");
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        mojaArrayListObiekty.add(o3);
+        mojaArrayListObiekty.add(o4);
+        //When
+        Obiekt x= (Obiekt) mojaArrayListObiekty.get(1);
+        //Then
+        //Assert.assertEquals("obiekt2", x);
+    }
 
 }
