@@ -1,3 +1,4 @@
+package java;
 
 import Clollections.MojaArrayList;
 import Clollections.Obiekt;
