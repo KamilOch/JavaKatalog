@@ -85,4 +85,55 @@ public class ArrayListTestFunkcji {
         Assert.assertEquals(0,mojaArrayListObiekty.size());
         Assert.assertTrue(mojaArrayListObiekty.isEmpty());
     }
+
+    @Test
+    public void shouldContainsElementInMyList1(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        //When
+        mojaArrayListObiekty.add(o1);
+        //Then
+        Assert.assertTrue(mojaArrayListObiekty.contains(o1));
+    }
+    @Test
+    public void shouldContainsElementInMyList2(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        //When
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        //Then
+        Assert.assertTrue(mojaArrayListObiekty.contains(o1));
+    }
+    @Test
+    public void shouldContainsElementInMyList3(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        //When
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        //Then
+        Assert.assertTrue(mojaArrayListObiekty.contains(o2));
+    }
+    @Test
+    public void shouldNotContainsElementInMyList(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        //When
+        mojaArrayListObiekty.add(o1);
+
+        //Then
+        Assert.assertFalse(mojaArrayListObiekty.contains(o2));
+    }
+
+
+
+
 }

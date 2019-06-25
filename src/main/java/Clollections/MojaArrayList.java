@@ -27,7 +27,15 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public boolean contains(Object o) {
-        return false;
+        boolean czyZawiera = false;
+        for(int i=0; i<mojeObiekty.length;i++){
+            if(o.equals(mojeObiekty[i])){
+                czyZawiera = true;
+                break;
+            }
+        }
+
+        return czyZawiera;
     }
 
     @Override
