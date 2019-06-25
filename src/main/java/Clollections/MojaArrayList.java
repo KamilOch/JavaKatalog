@@ -107,8 +107,8 @@ public class MojaArrayList implements List<Object>{
     }
 
     @Override
-    public Object get(int index) {
-        return null;
+        public Object get(int index) {
+            return null;
     }
 
     @Override
@@ -123,7 +123,10 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public Object remove(int index) {
-        return null;
+        Obiekt kasowanyObiekt = mojeObiekty[index];
+        mojeObiekty[index] = null;
+        wielkosc--;
+        return kasowanyObiekt;
     }
 
     @Override

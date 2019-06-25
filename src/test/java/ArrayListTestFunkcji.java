@@ -88,6 +88,10 @@ public class ArrayListTestFunkcji {
         //Then
         Assert.assertEquals(2,mojaArrayListObiekty.size());
         Assert.assertFalse(mojaArrayListObiekty.isEmpty());
+        Assert.assertTrue(mojaArrayListObiekty.contains(o1));
+        Assert.assertTrue(mojaArrayListObiekty.contains(o3));
+        Assert.assertFalse(mojaArrayListObiekty.contains(o2));
+        Assert.assertFalse(mojaArrayListObiekty.contains(o4));
     }
 
     @Test
