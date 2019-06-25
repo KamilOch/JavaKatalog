@@ -54,7 +54,17 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public boolean remove(Object o) {
-        return false;
+        boolean czyZnalazl=false;
+
+        for(int i=0; i<mojeObiekty.length;i++){
+            if(mojeObiekty[i].equals(o)){
+                mojeObiekty[i] = null;
+                wielkosc--;
+                czyZnalazl = true;
+                break;
+            }
+        }
+        return czyZnalazl;
     }
 
     @Override

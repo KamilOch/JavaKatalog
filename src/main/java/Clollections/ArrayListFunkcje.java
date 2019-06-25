@@ -11,6 +11,7 @@ public class ArrayListFunkcje {
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         Obiekt o3 = new Obiekt("obiekt3");
+        Obiekt o4 = new Obiekt("obiekt4");
 
         List<Obiekt> obiekty = new ArrayList<Obiekt>();
         List<String> lista = new ArrayList<String>();
@@ -32,6 +33,11 @@ public class ArrayListFunkcje {
         System.out.println(mojaArrayListObiekty.size());
         System.out.println(mojaArrayListObiekty.get(1));
         System.out.println(mojaArrayListObiekty.isEmpty());
+        System.out.println("test");
+        System.out.println(mojaArrayListObiekty.size());
+        System.out.println(mojaArrayListObiekty.remove(o4));
+        System.out.println(mojaArrayListObiekty.size());
+
 
     }
 }

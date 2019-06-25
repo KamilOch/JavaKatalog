@@ -11,12 +11,12 @@ static Zwierze stworzPsa (){
     return new Pies();
 }
 
-    static Zwierze stworzPsaUkrytego (){
-        return new Pies.PiesUkryty();
-    }
+static Zwierze stworzPsaUkrytego (){
+    return new Pies.PiesUkryty();
+}
 
- static Zwierze stworzKota(){
-       return new Zwierze() {
+static Zwierze stworzKota(){
+    return new Zwierze() {
            @Override
            public void dajGlos() {
                System.out.println("mial2");
