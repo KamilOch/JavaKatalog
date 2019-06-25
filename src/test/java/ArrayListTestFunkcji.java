@@ -71,6 +71,26 @@ public class ArrayListTestFunkcji {
         Assert.assertFalse(mojaArrayListObiekty.isEmpty());
     }
     @Test
+    public void shouldRemoveElementFromMyList3(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        Obiekt o3 = new Obiekt("obiekt3");
+        Obiekt o4 = new Obiekt("obiekt4");
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        //When
+        mojaArrayListObiekty.remove(o2);
+        mojaArrayListObiekty.add(o3);
+        mojaArrayListObiekty.add(o4);
+        mojaArrayListObiekty.remove(o4);
+        //Then
+        Assert.assertEquals(2,mojaArrayListObiekty.size());
+        Assert.assertFalse(mojaArrayListObiekty.isEmpty());
+    }
+
+    @Test
     public void shouldRemoveTwoElementFromMyList2(){
         //Given
         MojaArrayList mojaArrayListObiekty = new MojaArrayList();
