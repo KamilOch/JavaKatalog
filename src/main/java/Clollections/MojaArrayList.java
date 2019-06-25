@@ -6,6 +6,7 @@ public class MojaArrayList implements List<Object>{
 
     private Obiekt [] mojeObiekty;
     private int wielkosc = 0;
+    private int kolejnyElement = 0;
 
     public MojaArrayList() {
      mojeObiekty = new Obiekt[1000];
@@ -34,7 +35,6 @@ public class MojaArrayList implements List<Object>{
                 break;
             }
         }
-
         return czyZawiera;
     }
 
@@ -55,7 +55,8 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public boolean add(Object o) {
-        mojeObiekty[wielkosc] = (Obiekt) o;
+        mojeObiekty[kolejnyElement] = (Obiekt) o;
+        kolejnyElement++;
         wielkosc++;
         return true;
     }
@@ -104,6 +105,7 @@ public class MojaArrayList implements List<Object>{
     public void clear() {
         mojeObiekty = new Obiekt[1000];
         wielkosc = 0;
+        kolejnyElement= 0;
     }
 
     @Override
