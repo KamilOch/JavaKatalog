@@ -102,7 +102,8 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public void clear() {
-
+        mojeObiekty = new Obiekt[1000];
+        wielkosc = 0;
     }
 
     @Override

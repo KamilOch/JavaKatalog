@@ -22,7 +22,7 @@ public class ArrayListFunkcje {
         obiekty.add(o4);
 
         lista.add("a kuku");
-
+        lista.clear();
         //Uwaga moja listaArray!!!
 
         MojaArrayList mojaArrayListObiekty = new MojaArrayList();

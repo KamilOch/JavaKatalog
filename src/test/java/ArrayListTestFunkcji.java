@@ -133,7 +133,20 @@ public class ArrayListTestFunkcji {
         Assert.assertFalse(mojaArrayListObiekty.contains(o2));
     }
 
-
+    @Test
+    public void shouldClearMyList(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o1);
+        //When
+        mojaArrayListObiekty.clear();
+        //Then
+        Assert.assertEquals(0,mojaArrayListObiekty.size());
+        Assert.assertTrue(mojaArrayListObiekty.isEmpty());
+    }
 
 
 }
