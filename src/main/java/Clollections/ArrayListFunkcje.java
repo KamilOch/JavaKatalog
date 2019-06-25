@@ -19,6 +19,7 @@ public class ArrayListFunkcje {
         obiekty.add(o1);
         obiekty.add(o2);
         obiekty.add(o3);
+        obiekty.add(o4);
 
         lista.add("a kuku");
 
@@ -35,7 +36,7 @@ public class ArrayListFunkcje {
         System.out.println(mojaArrayListObiekty.isEmpty());
         System.out.println("test");
         System.out.println(mojaArrayListObiekty.size());
-        System.out.println(mojaArrayListObiekty.remove(o4));
+        System.out.println(mojaArrayListObiekty.remove(o3));
         System.out.println(mojaArrayListObiekty.size());
 
 

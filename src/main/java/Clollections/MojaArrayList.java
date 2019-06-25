@@ -57,7 +57,7 @@ public class MojaArrayList implements List<Object>{
         boolean czyZnalazl=false;
 
         for(int i=0; i<mojeObiekty.length;i++){
-            if(mojeObiekty[i].equals(o)){
+            if(o.equals(mojeObiekty[i])){
                 mojeObiekty[i] = null;
                 wielkosc--;
                 czyZnalazl = true;
