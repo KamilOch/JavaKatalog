@@ -115,7 +115,8 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public Object set(int index, Object element) {
-        return null;
+        mojeObiekty [index] = (Obiekt) element;
+        return mojeObiekty[index] ;
     }
 
     @Override

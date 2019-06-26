@@ -15,7 +15,7 @@ public class ArrayListFunkcje {
 
         List<Obiekt> obiekty = new ArrayList<Obiekt>();
         List<String> lista = new ArrayList<String>();
-
+        lista.set(100,"ndfnDW");
         obiekty.add(o1);
         obiekty.add(o2);
         obiekty.add(o3);
