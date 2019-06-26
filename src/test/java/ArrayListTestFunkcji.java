@@ -189,7 +189,76 @@ public class ArrayListTestFunkcji {
         Assert.assertTrue(x.equals(o2));
         Assert.assertEquals(o2,x);
         Assert.assertSame(x,o2);
-
+    }
+    @Test
+    public void shouldRemoveElementFromMyListByIndex(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        //When
+        mojaArrayListObiekty.remove(0);
+        //Then
+        Assert.assertEquals(1,mojaArrayListObiekty.size());
+        Assert.assertFalse(mojaArrayListObiekty.isEmpty());
+        //uzycie get
+        Assert.assertEquals(mojaArrayListObiekty.get(0),o2);
+    }
+    @Test
+    public void shouldRemoveElementFromMyListByIndex2(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        //When
+        mojaArrayListObiekty.remove(1);
+        //Then
+        Assert.assertEquals(1,mojaArrayListObiekty.size());
+        Assert.assertFalse(mojaArrayListObiekty.isEmpty());
+        //uzycie get
+        Assert.assertNull(mojaArrayListObiekty.get(1));
+        Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
+    }
+    @Test
+    public void shouldRemoveElementFromMyListByIndex3(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        Obiekt o3 = new Obiekt("obiekt3");
+        Obiekt o4 = new Obiekt("obiekt4");
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        //When
+        mojaArrayListObiekty.remove(1);
+        mojaArrayListObiekty.add(o3);
+        mojaArrayListObiekty.add(o4);
+        //Then
+        Assert.assertEquals(3,mojaArrayListObiekty.size());
+        Assert.assertFalse(mojaArrayListObiekty.isEmpty());
+        //uzycie get
+        Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
+        Assert.assertEquals(mojaArrayListObiekty.get(1),o3);
+        Assert.assertEquals(mojaArrayListObiekty.get(2),o4);
+    }
+    @Test
+    public void shouldRemoveTwoElementFromMyListByIndex(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        mojaArrayListObiekty.add(o1);
+        mojaArrayListObiekty.add(o2);
+        //When
+        mojaArrayListObiekty.remove(0);
+        mojaArrayListObiekty.remove(1);
+        //Then
+        Assert.assertEquals(0,mojaArrayListObiekty.size());
+        Assert.assertTrue(mojaArrayListObiekty.isEmpty());
     }
 
 }
