@@ -55,6 +55,11 @@ public class ArrayListTestFunkcji {
         //Then
         Assert.assertEquals(1,mojaArrayListObiekty.size());
         Assert.assertFalse(mojaArrayListObiekty.isEmpty());
+        //uzycie get
+        Assert.assertNull(mojaArrayListObiekty.get(0));
+        Assert.assertEquals(mojaArrayListObiekty.get(1),o2);
+
+
     }
     @Test
     public void shouldRemoveElementFromMyList2(){
@@ -69,6 +74,9 @@ public class ArrayListTestFunkcji {
         //Then
         Assert.assertEquals(1,mojaArrayListObiekty.size());
         Assert.assertFalse(mojaArrayListObiekty.isEmpty());
+        //uzycie get
+        Assert.assertNull(mojaArrayListObiekty.get(1));
+        Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
     }
     @Test
     public void shouldRemoveElementFromMyList3(){
@@ -92,6 +100,13 @@ public class ArrayListTestFunkcji {
         Assert.assertTrue(mojaArrayListObiekty.contains(o3));
         Assert.assertFalse(mojaArrayListObiekty.contains(o2));
         Assert.assertFalse(mojaArrayListObiekty.contains(o4));
+        //uzycie get
+        Assert.assertNull(mojaArrayListObiekty.get(1));
+        Assert.assertNull(mojaArrayListObiekty.get(3));
+        Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
+        Assert.assertEquals(mojaArrayListObiekty.get(2),o3);
+
+
     }
 
     @Test
@@ -108,6 +123,8 @@ public class ArrayListTestFunkcji {
         //Then
         Assert.assertEquals(0,mojaArrayListObiekty.size());
         Assert.assertTrue(mojaArrayListObiekty.isEmpty());
+        Assert.assertNull(mojaArrayListObiekty.get(0));
+        Assert.assertNull(mojaArrayListObiekty.get(1));
     }
 
     @Test
