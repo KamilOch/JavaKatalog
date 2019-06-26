@@ -67,8 +67,16 @@ public class MojaArrayList implements List<Object>{
 
         for(int i=0; i<mojeObiekty.length;i++){
             if(o.equals(mojeObiekty[i])){
-                mojeObiekty[i] = null;
+                mojeObiekty[i]=null;
+
+                for (int j=i; j<mojeObiekty.length-1;j++){
+                    //while(mojeObiekty[(j+1)] != null) {
+                        mojeObiekty[j] = mojeObiekty[j+1];
+                    //}
+                }
+
                 wielkosc--;
+                kolejnyElement--;
                 czyZnalazl = true;
                 break;
             }
@@ -126,10 +134,17 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public Object remove(int index) {
-        Obiekt kasowanyObiekt = mojeObiekty[index];
-        mojeObiekty[index] = null;
-        wielkosc--;
-        return kasowanyObiekt;
+//        Obiekt kasowanyObiekt = mojeObiekty[index];
+//        mojeObiekty[index] = null;
+//        for (int j=index; j<mojeObiekty.length-1;j++){
+//            while(mojeObiekty[(j+1)] != null) {
+//                mojeObiekty[j] = mojeObiekty[j+1];
+//            }
+//        }
+//        wielkosc--;
+//        kolejnyElement--;
+//        return kasowanyObiekt;
+        return null;
     }
 
     @Override

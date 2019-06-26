@@ -16,7 +16,6 @@ public class ArrayListTestFunkcji {
         Assert.assertEquals(0,mojaArrayListObiekty.size());
         Assert.assertTrue(mojaArrayListObiekty.isEmpty());
     }
-
     @Test
     public void shouldAddElementToMyList(){
         //Given
@@ -41,9 +40,8 @@ public class ArrayListTestFunkcji {
         Assert.assertEquals(2,mojaArrayListObiekty.size());
         Assert.assertFalse(mojaArrayListObiekty.isEmpty());
     }
-
     @Test
-    public void shouldRemoveElementFromMyList(){
+    public void shouldRemoveElementFromMyListByObject(){
         //Given
         MojaArrayList mojaArrayListObiekty = new MojaArrayList();
         Obiekt o1 = new Obiekt("obiekt1");
@@ -56,13 +54,10 @@ public class ArrayListTestFunkcji {
         Assert.assertEquals(1,mojaArrayListObiekty.size());
         Assert.assertFalse(mojaArrayListObiekty.isEmpty());
         //uzycie get
-        Assert.assertNull(mojaArrayListObiekty.get(0));
-        Assert.assertEquals(mojaArrayListObiekty.get(1),o2);
-
-
+        Assert.assertEquals(mojaArrayListObiekty.get(0),o2);
     }
     @Test
-    public void shouldRemoveElementFromMyList2(){
+    public void shouldRemoveElementFromMyListByObject2(){
         //Given
         MojaArrayList mojaArrayListObiekty = new MojaArrayList();
         Obiekt o1 = new Obiekt("obiekt1");
@@ -79,7 +74,7 @@ public class ArrayListTestFunkcji {
         Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
     }
     @Test
-    public void shouldRemoveElementFromMyList3(){
+    public void shouldRemoveElementFromMyListByObject3(){
         //Given
         MojaArrayList mojaArrayListObiekty = new MojaArrayList();
         Obiekt o1 = new Obiekt("obiekt1");
@@ -92,25 +87,16 @@ public class ArrayListTestFunkcji {
         mojaArrayListObiekty.remove(o2);
         mojaArrayListObiekty.add(o3);
         mojaArrayListObiekty.add(o4);
-        mojaArrayListObiekty.remove(o4);
         //Then
-        Assert.assertEquals(2,mojaArrayListObiekty.size());
+        Assert.assertEquals(3,mojaArrayListObiekty.size());
         Assert.assertFalse(mojaArrayListObiekty.isEmpty());
-        Assert.assertTrue(mojaArrayListObiekty.contains(o1));
-        Assert.assertTrue(mojaArrayListObiekty.contains(o3));
-        Assert.assertFalse(mojaArrayListObiekty.contains(o2));
-        Assert.assertFalse(mojaArrayListObiekty.contains(o4));
         //uzycie get
-        Assert.assertNull(mojaArrayListObiekty.get(1));
-        Assert.assertNull(mojaArrayListObiekty.get(3));
         Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
-        Assert.assertEquals(mojaArrayListObiekty.get(2),o3);
-
-
+        Assert.assertEquals(mojaArrayListObiekty.get(1),o3);
+        Assert.assertEquals(mojaArrayListObiekty.get(2),o4);
     }
-
     @Test
-    public void shouldRemoveTwoElementFromMyList2(){
+    public void shouldRemoveTwoElementFromMyListByObject(){
         //Given
         MojaArrayList mojaArrayListObiekty = new MojaArrayList();
         Obiekt o1 = new Obiekt("obiekt1");
@@ -123,10 +109,7 @@ public class ArrayListTestFunkcji {
         //Then
         Assert.assertEquals(0,mojaArrayListObiekty.size());
         Assert.assertTrue(mojaArrayListObiekty.isEmpty());
-        Assert.assertNull(mojaArrayListObiekty.get(0));
-        Assert.assertNull(mojaArrayListObiekty.get(1));
     }
-
     @Test
     public void shouldContainsElementInMyList1(){
         //Given
@@ -173,7 +156,6 @@ public class ArrayListTestFunkcji {
         //Then
         Assert.assertFalse(mojaArrayListObiekty.contains(o2));
     }
-
     @Test
     public void shouldClearMyList(){
         //Given
@@ -188,7 +170,6 @@ public class ArrayListTestFunkcji {
         Assert.assertEquals(0,mojaArrayListObiekty.size());
         Assert.assertTrue(mojaArrayListObiekty.isEmpty());
     }
-
     @Test
     public void shouldGiveObjectFromMyList(){
         //Given
@@ -208,7 +189,7 @@ public class ArrayListTestFunkcji {
         Assert.assertTrue(x.equals(o2));
         Assert.assertEquals(o2,x);
         Assert.assertSame(x,o2);
-        Assert.assertTrue(x ==o2);
+
     }
 
 }
