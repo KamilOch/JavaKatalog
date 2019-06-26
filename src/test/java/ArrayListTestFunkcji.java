@@ -176,6 +176,7 @@ public class ArrayListTestFunkcji {
     public void shouldGiveObjectFromMyList(){
         //Given
         MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        MojaArrayList nowaArrayLista = new MojaArrayList();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         Obiekt o3 = new Obiekt("obiekt3");
@@ -186,8 +187,12 @@ public class ArrayListTestFunkcji {
         mojaArrayListObiekty.add(o4);
         //When
         Obiekt x= (Obiekt) mojaArrayListObiekty.get(1);
+        nowaArrayLista.add(x);
         //Then
         //Assert.assertEquals("obiekt2", x);
+        Assert.assertEquals(1,nowaArrayLista.size());
+        Assert.assertTrue(nowaArrayLista.contains(x));
+        Assert.assertTrue(x.equals(o2));
     }
 
 }
