@@ -157,7 +157,9 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public void add(int index, Object element) {
-
+        if(mojeObiekty[index]==null){
+            set(index,element);
+        }
     }
 
     @Override

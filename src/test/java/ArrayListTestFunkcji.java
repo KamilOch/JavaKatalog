@@ -261,4 +261,17 @@ public class ArrayListTestFunkcji {
         Assert.assertTrue(mojaArrayListObiekty.isEmpty());
     }
 
+    @Test
+    public void shouldAddElementToMyListIfOnThisIndexEqualsNull(){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        //When
+        mojaArrayListObiekty.add(0,o1);
+        mojaArrayListObiekty.add(0,o2);
+        //Then
+        Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
+    }
+
 }
