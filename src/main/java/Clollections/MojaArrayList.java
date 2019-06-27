@@ -6,32 +6,24 @@ public class MojaArrayList implements List<Object>{
 
     private Object [] mojeObiekty;
     private int wielkosc = 0;
-    private int wielkoscTablicy = wielkosc +10;
 
+    private void dopasujWielkośćListy( int wymaganaWielkoscListy) {
 
-    private void dopasujWielkośćListy( int wymaganaWielkoscListy){
-        if(wielkosc +20 >= wielkoscTablicy){
-            wielkoscTablicy += 20;
-            Object [] tempMojeObiekty = new Object [wielkoscTablicy];
-            for (int i=0; i<mojeObiekty.length; i++){
-                tempMojeObiekty[i]= mojeObiekty[i];
+        if (wymaganaWielkoscListy > mojeObiekty.length) {
+            Object[] tempMojeObiekty = new Object[wymaganaWielkoscListy + 10];
+            for (int i = 0; i < mojeObiekty.length; i++) {
+                tempMojeObiekty[i] = mojeObiekty[i];
             }
             mojeObiekty = tempMojeObiekty;
-        } else {
-                wielkoscTablicy =wielkosc+10;
-                Object [] tempMojeObiekty = new Object [wielkoscTablicy];
-                for (int i=0; i<tempMojeObiekty.length; i++){
-                tempMojeObiekty[i]= mojeObiekty[i];
-                }
-                mojeObiekty = tempMojeObiekty;
-                }
+        }
     }
-
     public MojaArrayList() {
-     mojeObiekty = new Obiekt[wielkoscTablicy];
+     this(10);
     }
 
-
+    public MojaArrayList(int initialCapacity) {
+     mojeObiekty = new Obiekt[initialCapacity];
+    }
     @Override
     public int size() {
         return wielkosc;
