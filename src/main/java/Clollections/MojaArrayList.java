@@ -163,16 +163,12 @@ public class MojaArrayList implements List<Object>{
     public Object remove(int index) {
         Object kasowanyObiekt = mojeObiekty[index];
         mojeObiekty[index] = null;
-        for (int j=index; j<mojeObiekty.length-1;j++){
-            //while(mojeObiekty[(j+1)] != null) {
-            if(mojeObiekty[(j + 1)] == null) {
-                break;
-            } else  mojeObiekty[j] = mojeObiekty[j+1];
-        }
         wielkosc--;
+        for (int i=index; i < wielkosc ;i++){
+            mojeObiekty[i] = mojeObiekty[i+1];
+        }
         dopasujWielkośćListy(wielkosc);
         return kasowanyObiekt;
-        //return null;
     }
 
     @Override
