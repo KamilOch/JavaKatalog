@@ -94,8 +94,9 @@ public class MojaArrayList implements List<Object>{
 
                 for (int j=i; j<mojeObiekty.length-1;j++){
                     //while(mojeObiekty[(j+1)] != null) {
-                        mojeObiekty[j] = mojeObiekty[j+1];
-                    //}
+                    if(mojeObiekty[(j+1)]==null) {
+                        break;
+                    } else mojeObiekty[j] = mojeObiekty[j + 1];
                 }
 
                 wielkosc--;
@@ -165,8 +166,9 @@ public class MojaArrayList implements List<Object>{
         mojeObiekty[index] = null;
         for (int j=index; j<mojeObiekty.length-1;j++){
             //while(mojeObiekty[(j+1)] != null) {
-                mojeObiekty[j] = mojeObiekty[j+1];
-            //}
+            if(mojeObiekty[(j + 1)] == null) {
+                break;
+            } else  mojeObiekty[j] = mojeObiekty[j+1];
         }
         wielkosc--;
         kolejnyElement--;
