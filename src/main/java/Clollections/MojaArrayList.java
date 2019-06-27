@@ -4,23 +4,23 @@ import java.util.*;
 
 public class MojaArrayList implements List<Object>{
 
-    private Obiekt [] mojeObiekty;
+    private Object [] mojeObiekty;
     private int wielkosc = 0;
     private int kolejnyElement = 0;
-    private int poczatkowaWielkoscListy= wielkosc +10;
+    private int wielkoscTablicy = wielkosc +10;
 
 
     private void dopasujWielkośćListy( int wymaganaWielkoscListy){
-        if(wielkosc +20 >=poczatkowaWielkoscListy){
-            poczatkowaWielkoscListy += 20;
-            Obiekt [] tempMojeObiekty = new Obiekt [poczatkowaWielkoscListy];
+        if(wielkosc +20 >= wielkoscTablicy){
+            wielkoscTablicy += 20;
+            Object [] tempMojeObiekty = new Object [wielkoscTablicy];
             for (int i=0; i<mojeObiekty.length; i++){
                 tempMojeObiekty[i]= mojeObiekty[i];
             }
             mojeObiekty = tempMojeObiekty;
         } else {
-                poczatkowaWielkoscListy=wielkosc+10;
-                Obiekt [] tempMojeObiekty = new Obiekt [poczatkowaWielkoscListy];
+                wielkoscTablicy =wielkosc+10;
+                Object [] tempMojeObiekty = new Object [wielkoscTablicy];
                 for (int i=0; i<tempMojeObiekty.length; i++){
                 tempMojeObiekty[i]= mojeObiekty[i];
                 }
@@ -29,7 +29,7 @@ public class MojaArrayList implements List<Object>{
     }
 
     public MojaArrayList() {
-     mojeObiekty = new Obiekt[poczatkowaWielkoscListy];
+     mojeObiekty = new Obiekt[wielkoscTablicy];
     }
 
 
@@ -78,8 +78,7 @@ public class MojaArrayList implements List<Object>{
 
         dopasujWielkośćListy(wielkosc);
 
-        mojeObiekty[kolejnyElement] = (Obiekt) o;
-        kolejnyElement++;
+        mojeObiekty[wielkosc] = o;
         wielkosc++;
         return true;
     }
@@ -151,7 +150,7 @@ public class MojaArrayList implements List<Object>{
 
         dopasujWielkośćListy(index);
 
-        mojeObiekty [index] = (Obiekt) element;
+        mojeObiekty [index] = element;
         return mojeObiekty[index] ;
     }
 
@@ -165,7 +164,7 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public Object remove(int index) {
-        Obiekt kasowanyObiekt = mojeObiekty[index];
+        Object kasowanyObiekt = mojeObiekty[index];
         mojeObiekty[index] = null;
         for (int j=index; j<mojeObiekty.length-1;j++){
             //while(mojeObiekty[(j+1)] != null) {
