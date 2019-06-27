@@ -157,6 +157,7 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public void add(int index, Object element) {
+        dopasujWielkośćListy(index);
         if(mojeObiekty[index]==null){
             set(index,element);
         }
@@ -181,7 +182,14 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        int index=-1;
+        for (int i=0; i<mojeObiekty.length; i++ ){
+            if (o.equals(mojeObiekty[i])){
+                index=i;
+                break;
+            }
+        }
+        return index;
     }
 
     @Override

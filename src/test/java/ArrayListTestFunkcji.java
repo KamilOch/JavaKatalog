@@ -273,5 +273,29 @@ public class ArrayListTestFunkcji {
         //Then
         Assert.assertEquals(mojaArrayListObiekty.get(0),o1);
     }
+    @Test
+    public void shouldReturnIndexOfObjectFromMyList (){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        mojaArrayListObiekty.add(o1);
+        //When
+        mojaArrayListObiekty.indexOf(o1);
+        //Then
+        Assert.assertEquals(0,mojaArrayListObiekty.indexOf(o1));
+    }
+    @Test
+    public void shouldReturnNumberMinusOneIfNoObjectInMyList (){
+        //Given
+        MojaArrayList mojaArrayListObiekty = new MojaArrayList();
+        Obiekt o1 = new Obiekt("obiekt1");
+        Obiekt o2 = new Obiekt("obiekt2");
+        mojaArrayListObiekty.add(o1);
+        //When
+        mojaArrayListObiekty.indexOf(o1);
+        //Then
+        Assert.assertEquals(-1,mojaArrayListObiekty.indexOf(o2));
+    }
 
 }
