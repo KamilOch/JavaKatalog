@@ -6,7 +6,6 @@ public class MojaArrayList implements List<Object>{
 
     private Object [] mojeObiekty;
     private int wielkosc = 0;
-    private int kolejnyElement = 0;
     private int wielkoscTablicy = wielkosc +10;
 
 
@@ -99,7 +98,6 @@ public class MojaArrayList implements List<Object>{
                 }
 
                 wielkosc--;
-                kolejnyElement--;
                 czyZnalazl = true;
                 break;
             }
@@ -137,7 +135,6 @@ public class MojaArrayList implements List<Object>{
     public void clear() {
         mojeObiekty = new Obiekt[1000];
         wielkosc = 0;
-        kolejnyElement= 0;
     }
 
     @Override
@@ -173,7 +170,6 @@ public class MojaArrayList implements List<Object>{
             } else  mojeObiekty[j] = mojeObiekty[j+1];
         }
         wielkosc--;
-        kolejnyElement--;
         dopasujWielkośćListy(wielkosc);
         return kasowanyObiekt;
         //return null;
