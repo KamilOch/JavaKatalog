@@ -4,35 +4,26 @@ import java.util.*;
 
 public class MojaArrayList implements List<Object>{
 
-    private Obiekt [] mojeObiekty;
+    private Object [] mojeObiekty;
     private int wielkosc = 0;
-    private int kolejnyElement = 0;
-    private int poczatkowaWielkoscListy= wielkosc +10;
 
+    private void dopasujWielkośćListy( int wymaganaWielkoscListy) {
 
-    private void dopasujWielkośćListy( int wymaganaWielkoscListy){
-        if(wielkosc +20 >=poczatkowaWielkoscListy){
-            poczatkowaWielkoscListy += 20;
-            Obiekt [] tempMojeObiekty = new Obiekt [poczatkowaWielkoscListy];
-            for (int i=0; i<mojeObiekty.length; i++){
-                tempMojeObiekty[i]= mojeObiekty[i];
+        if (wymaganaWielkoscListy > mojeObiekty.length) {
+            Object[] tempMojeObiekty = new Object[wymaganaWielkoscListy + 10];
+            for (int i = 0; i < mojeObiekty.length; i++) {
+                tempMojeObiekty[i] = mojeObiekty[i];
             }
             mojeObiekty = tempMojeObiekty;
-        } else {
-                poczatkowaWielkoscListy=wielkosc+10;
-                Obiekt [] tempMojeObiekty = new Obiekt [poczatkowaWielkoscListy];
-                for (int i=0; i<tempMojeObiekty.length; i++){
-                tempMojeObiekty[i]= mojeObiekty[i];
-                }
-                mojeObiekty = tempMojeObiekty;
-                }
+        }
     }
-
     public MojaArrayList() {
-     mojeObiekty = new Obiekt[poczatkowaWielkoscListy];
+     this(10);
     }
 
-
+    public MojaArrayList(int initialCapacity) {
+     mojeObiekty = new Obiekt[initialCapacity];
+    }
     @Override
     public int size() {
         return wielkosc;
@@ -78,8 +69,7 @@ public class MojaArrayList implements List<Object>{
 
         dopasujWielkośćListy(wielkosc);
 
-        mojeObiekty[kolejnyElement] = (Obiekt) o;
-        kolejnyElement++;
+        mojeObiekty[wielkosc] = o;
         wielkosc++;
         return true;
     }
@@ -100,7 +90,6 @@ public class MojaArrayList implements List<Object>{
                 }
 
                 wielkosc--;
-                kolejnyElement--;
                 czyZnalazl = true;
                 break;
             }
@@ -138,7 +127,6 @@ public class MojaArrayList implements List<Object>{
     public void clear() {
         mojeObiekty = new Obiekt[1000];
         wielkosc = 0;
-        kolejnyElement= 0;
     }
 
     @Override
@@ -151,7 +139,7 @@ public class MojaArrayList implements List<Object>{
 
         dopasujWielkośćListy(index);
 
-        mojeObiekty [index] = (Obiekt) element;
+        mojeObiekty [index] = element;
         return mojeObiekty[index] ;
     }
 
@@ -165,19 +153,14 @@ public class MojaArrayList implements List<Object>{
 
     @Override
     public Object remove(int index) {
-        Obiekt kasowanyObiekt = mojeObiekty[index];
+        Object kasowanyObiekt = mojeObiekty[index];
         mojeObiekty[index] = null;
-        for (int j=index; j<mojeObiekty.length-1;j++){
-            //while(mojeObiekty[(j+1)] != null) {
-            if(mojeObiekty[(j + 1)] == null) {
-                break;
-            } else  mojeObiekty[j] = mojeObiekty[j+1];
-        }
         wielkosc--;
-        kolejnyElement--;
+        for (int i=index; i < wielkosc ;i++){
+            mojeObiekty[i] = mojeObiekty[i+1];
+        }
         dopasujWielkośćListy(wielkosc);
         return kasowanyObiekt;
-        //return null;
     }
 
     @Override
