@@ -9,7 +9,7 @@ public class MojaArrayList implements List<Object>{
 
     private void dopasujWielkośćListy( int wymaganaWielkoscListy) {
 
-        if (wymaganaWielkoscListy > mojeObiekty.length) {
+        if (wymaganaWielkoscListy >= mojeObiekty.length-1) {
             Object[] tempMojeObiekty = new Object[wymaganaWielkoscListy + 10];
             for (int i = 0; i < mojeObiekty.length; i++) {
                 tempMojeObiekty[i] = mojeObiekty[i];
@@ -68,7 +68,6 @@ public class MojaArrayList implements List<Object>{
     public boolean add(Object o) {
 
         dopasujWielkośćListy(wielkosc);
-
         mojeObiekty[wielkosc] = o;
         wielkosc++;
         return true;
@@ -138,7 +137,7 @@ public class MojaArrayList implements List<Object>{
     public Object set(int index, Object element) {
 
         dopasujWielkośćListy(index);
-
+        wielkosc=index+1;
         mojeObiekty [index] = element;
         return mojeObiekty[index] ;
     }
@@ -146,9 +145,15 @@ public class MojaArrayList implements List<Object>{
     @Override
     public void add(int index, Object element) {
         dopasujWielkośćListy(index);
-        if(mojeObiekty[index]==null){
-            set(index,element);
+        if(index<wielkosc){
+           for(int i = wielkosc ; i>index ; i--) {
+               mojeObiekty[i] = mojeObiekty[i-1];
+           }
+           wielkosc +=1;
+           mojeObiekty[index] = element;
         }
+
+         else set(index,element);
     }
 
     @Override

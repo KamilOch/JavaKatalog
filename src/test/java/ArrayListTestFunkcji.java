@@ -262,17 +262,17 @@ public class ArrayListTestFunkcji {
     }
 
     @Test
-    public void shouldAddElementToMyListIfOnThisIndexEqualsNull(){
+    public void shouldAdd2ElementToMyListIfOnThisIndexEqualsNull(){
         //Given
         JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         //When
-        // tu moja dziala inaczej niz arrayList
-        jakasKolekcja.add(0,o1);
-        jakasKolekcja.add(0,o2);
+        jakasKolekcja.add(20,o1);
+        jakasKolekcja.add(20,o2);
         //Then
-        Assert.assertEquals(jakasKolekcja.get(0),o2);
+        Assert.assertEquals(jakasKolekcja.get(20),o2);
+        Assert.assertEquals(jakasKolekcja.get(21),o1);
     }
     @Test
     public void shouldReturnIndexOfObjectFromMyList (){
