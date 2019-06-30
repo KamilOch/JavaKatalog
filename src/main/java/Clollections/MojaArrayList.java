@@ -152,8 +152,7 @@ public class MojaArrayList implements List<Object>{
            wielkosc +=1;
            mojeObiekty[index] = element;
         }
-
-         else set(index,element);
+        else mojeObiekty[index]= element;
     }
 
     @Override
