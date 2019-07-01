@@ -7,14 +7,13 @@ import java.util.List;
 
 public abstract class Testy{
 
-    private List jakasKolekcja;
+    private List jakasKolekcja = utworzObiektDoTestu();
 
     abstract List<Object> utworzObiektDoTestu();
 
     @Test
     public void shouldHaveZeroElementInMyList(){
         //Given
-        utworzObiektDoTestu();
         //When
         //Then
         Assert.assertEquals(0,jakasKolekcja.size());
@@ -23,7 +22,6 @@ public abstract class Testy{
     @Test
     public void shouldAddElementToMyList(){
         //Given
-        utworzObiektDoTestu();
         Obiekt o1 = new Obiekt("obiekt1");
         //When
         jakasKolekcja.add(o1);
@@ -34,8 +32,6 @@ public abstract class Testy{
     @Test
     public void shouldAddTwoElementToMyList(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         //When
@@ -48,8 +44,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveElementFromMyListByObject(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -65,8 +59,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveElementFromMyListByObject2(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -83,8 +75,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveElementFromMyListByObject3(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         Obiekt o3 = new Obiekt("obiekt3");
@@ -106,8 +96,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveTwoElementFromMyListByObject(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -122,8 +110,6 @@ public abstract class Testy{
     @Test
     public void shouldContainsElementInMyList1(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         //When
         jakasKolekcja.add(o1);
@@ -133,8 +119,6 @@ public abstract class Testy{
     @Test
     public void shouldContainsElementInMyList2(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         //When
@@ -146,8 +130,6 @@ public abstract class Testy{
     @Test
     public void shouldContainsElementInMyList3(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         //When
@@ -159,7 +141,6 @@ public abstract class Testy{
     @Test
     public void shouldNotContainsElementInMyList(){
         //Given
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         //When
@@ -171,8 +152,6 @@ public abstract class Testy{
     @Test
     public void shouldClearMyList(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -186,8 +165,6 @@ public abstract class Testy{
     @Test
     public void shouldGiveObjectFromMyList(){
         //Given
-        utworzObiektDoTestu();
-       //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         Obiekt o3 = new Obiekt("obiekt3");
@@ -208,8 +185,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveElementFromMyListByIndex(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -225,8 +200,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveElementFromMyListByIndex2(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -243,8 +216,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveElementFromMyListByIndex3(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         Obiekt o3 = new Obiekt("obiekt3");
@@ -266,8 +237,6 @@ public abstract class Testy{
     @Test
     public void shouldRemoveTwoElementFromMyListByIndex(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -283,8 +252,6 @@ public abstract class Testy{
     @Test
     public void shouldAdd2ElementToMyListIfOnThisIndexEqualsNull(){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         //When
@@ -297,8 +264,6 @@ public abstract class Testy{
     @Test
     public void shouldReturnIndexOfObjectFromMyList (){
         //Given
-        utworzObiektDoTestu();
-       //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
@@ -310,8 +275,6 @@ public abstract class Testy{
     @Test
     public void shouldReturnNumberMinusOneIfNoObjectInMyList (){
         //Given
-        utworzObiektDoTestu();
-        //JakasKolekcja jakasKolekcja = new JakasKolekcja();
         Obiekt o1 = new Obiekt("obiekt1");
         Obiekt o2 = new Obiekt("obiekt2");
         jakasKolekcja.add(o1);
